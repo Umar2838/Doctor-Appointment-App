@@ -6,7 +6,7 @@ const DoctorAbout = () => {
 
             <div>
                 <h3 className='text-[20px] leading-[30px] text-headingColor font-semibold lex items-center gap-2' >About of
-                    <span className='text-irisBlue font-bold text-[24px] leading-9' >Munibur Rehman</span>
+                    <span className='text-irisBlue font-bold text-[24px] leading-9' > Munibur Rehman</span>
                 </h3>
                 <p className="text__para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae explicabo quaerat soluta eveniet quis architecto corporis debitis obcaecati, blanditiis accusamus fuga voluptas, itaque perferendis rem?</p>
             </div>
