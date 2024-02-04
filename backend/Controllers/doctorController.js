@@ -50,6 +50,7 @@ export const getAllDoctor = async (req, res) => {
 
         const { query } = req.query;
         let doctors;
+
         if (query) {
             doctors = await Doctor.find({ 
             isApproved: "approved",
@@ -69,7 +70,6 @@ export const getAllDoctor = async (req, res) => {
     }
     catch (err) {
         res.status(404).json({ success: false, message: "Doctors not found" })
-        console.error(err)
     }
 
 }
