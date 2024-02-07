@@ -86,10 +86,10 @@ if(doctor){
 if(!user){
     return res.status(404).json({message:"User not found"})
 }
+// campare password
 
 const isPassworMatch = await bcrypt.compare(req.body.password,user.password)
 
-// campare password
 if(!isPassworMatch){
     return res.status(400).json({status:false, message:"Invalid credentials"})
 }
