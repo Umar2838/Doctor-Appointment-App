@@ -4,12 +4,15 @@ import {authContext} from "../../context/AuthContext"
 import MyBookings from './MyBookings'
 import ProfileSettings from './ProfileSettings'
 import useGetProfile from "../../Hooks/UseFetchData"
+import { token } from "../../config.js";
 import {BASE_URL} from "../../../config"
 const myaccount = () => {
+
+
   const {dispatch} = useContext(authContext)
 const [tab,setTab] = useState('bookings')
 
-const {data:userdata,loading,error} = useGetProfile(`${BASE_URL}/users/profile/me/:id`)
+const {data:userdata,loading,error} = useGetProfile(`${BASE_URL}/users/profile/me/65c3e26bb9eb641cd485c580`)
 
 console.log("userdata",userdata)
 
