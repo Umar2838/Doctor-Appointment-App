@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { token } from "../../config";
+import { token } from "../../config.js";
 
 const useFetchData = (url) => { // Add url as a parameter to the hook
 

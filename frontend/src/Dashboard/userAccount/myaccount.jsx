@@ -9,7 +9,7 @@ const myaccount = () => {
   const {dispatch} = useContext(authContext)
 const [tab,setTab] = useState('bookings')
 
-const {data:userdata,loading,error} = useGetProfile(`${BASE_URL}/users/profile/me`)
+const {data:userdata,loading,error} = useGetProfile(`${BASE_URL}/users/profile/me/:id`)
 
 console.log("userdata",userdata)
 

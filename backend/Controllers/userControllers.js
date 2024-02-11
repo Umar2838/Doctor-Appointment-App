@@ -61,30 +61,10 @@ export const deleteUser = async(req,res)=>{
         }
 
             }
-
-           // Middleware to verify JWT token and extract user ID
-export const authenticateUser = (req, res, next) => {
-    const token = req.headers.authorization;
-  
-    if (!token) {
-      return res.status(403).json({ message: 'Token is required' });
-    }
-  
-    jwt.verify(token, "72iKdM8720+fPWl96znjM8/mo1xZTf5Dwv/zEjZfzF5y7SDixCvsne2FyGT+AmvHkozSdptb8k4rl/8gzKpU1E9zvtJNX69cT7WE0YNl87MzStMnDcAwU7H2vIU23qUV3qEnVAh+otelbX6yHIaLQsLLf5vG6tA4QE0/StOQCrAla1bwtZPIvC0PC5tlqC4mNt6leRP8hL01aByKWmA5uYoDQ94erZ9bnLvCuDBJFhtYIuzVJ+N39WMVB5UbBFwwYQcg70aPBnBaCS9nUFgh9La5ke5yChWZoGyG9wlVbZk6KwTyzzv+UtsP2HBMR8/6uETWCkCtGCdnN+vYR9yPQQ==" , (err, decoded) => {
-      if (err) {
-        return res.status(401).json({ message: 'Unauthorized' });
-      }
-       req.userId = decoded.id;
-       
-       
-      next();
-    });
-  };
   
   // Endpoint to get user profile
   export const getUserProfile = async (req, res) => {
-    const userId = req.userId; // Access user ID from request object
-  console.log(userId)
+    const userId = req.params.id; 
     try {
       const user = await User.findById(userId);
   
@@ -93,9 +73,10 @@ export const authenticateUser = (req, res, next) => {
       }
   
       const { password, ...rest } = user._doc;
-      res.status(200).json({ success: true, message: "Profile info retrieved", data: { ...rest } });
+      res.status(200).json({ success: true, message: "Profile info retrieved", data:{ ...rest } });
     } catch (err) {
       res.status(500).json({ success: false, message: "Something went wrong, cannot get profile" });
+      console.log(err.message)
     }
   };
   

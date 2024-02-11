@@ -71,7 +71,7 @@ const {dispatch} = useContext(authContext)
 <div className='mt-7' >
   <button type='submit' className='w-full bg-primaryColor rounded-lg text-white text-[18px] leading-[30px] px-4 py-3' >{loading ? <HashLoader size={25} color="#ffffff" /> : 'Login' }</button>
 </div>
-<p className='mt-5 text-textColor text-center' >Don&apos;t have an account? <Link to="/register" className="text-primaryColor font-medium ml-1" >Register</Link></p>
+<p className='mt-5 text-textColor text-center' >Don&apos;t have an account?<Link to="/register" className="text-primaryColor font-medium ml-1" >Register</Link></p>
 </form>
 </section>
   )

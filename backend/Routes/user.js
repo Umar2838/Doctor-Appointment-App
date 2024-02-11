@@ -7,7 +7,7 @@ router.get("/:id",getSingleUser)
 router.get("/",getAllUser)
 router.put("/:id",updateUser)
 router.delete("/:id",deleteUser)
-router.get("/profile/me",getUserProfile)
+router.get("/profile/me/:id",getUserProfile)
 router.get("/appointments/my-appointments",getMyAppointments)
 
 export default router
